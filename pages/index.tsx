@@ -31,24 +31,79 @@ export default function Home() {
           </nav>
         </header>
         <section className="intro-app">
-          <h1>
-            Discover new ko-workers,
-              <br/>
-            study and evolve as a team
-          </h1>
-          <p>
-            Under development, see the
-            <a href="">
-              <img src="/GitHub-2.png" alt="github"/>
-              repository
-            </a>
+          <div className="responsive">
+            <h1>
+              Discover new ko-workers,
+                <br/>
+              study and evolve as a team
+            </h1>
+            <p>
+              Under development, see the
+              <a href="">
+                <img src="/GitHub-2.png" alt="github"/>
+                repository
+              </a>
+            </p>
+            <img className="dashboard" src="/Dashboard.png" alt="Dashboard" />
+            <div className="container-tecs">
+              <img src="/mongodb.png" alt="mongoDB Atlas" />
+              <img src="/Expressjs.png" alt="express.js"/>
+              <img src="/React.png" alt="react.js"/>
+              <img src="/nodejs.png" alt="nodejs"/>
+            </div>
+        </div>
+        </section>
+        <section className="experience">
+          <div className="experience-responsive">
+            <h1>
+              Simulate the experience of working<br/>on large projects
+            </h1>
+            <div className="view-dashbord">
+              <img className="dashboard" src="/Workspace.png" alt="Dashboard"/>
+              <div className="the-best-tools">
+                <h2>
+                  The best tools<br/>to work in<br/>teams and<br/>remotely
+                </h2>
+                <p>
+                  Contribute to the project on <a href="/">Github</a>
+                </p>
+                <div className="container-tools">
+                  <img src="/Todo-list.svg" alt="To-Do list" />
+                  <img src="/Chatbutton.svg" alt="Chat" />
+                  <img src="/Video-button.svg" alt="Video Call" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="container-working">
+          <p className="work-experience">
+            No work experience? Koww is an open source social network platform that connect
+            developers with another developers for study together and work in another open
+            source projects
           </p>
-          <img className="dashboard" src="/Dashboard.png" alt="Dashboard" />
-          <div className="container-tecs">
-            <img src="/mongodb.png" alt="mongoDB Atlas" />
-            <img src="/Expressjs.png" alt="express.js"/>
-            <img src="/React.png" alt="react.js"/>
-            <img src="/nodejs.png" alt="nodejs"/>
+        </section>
+        <section className="monitoring">
+          <div className="mento-responsive">
+            <h1>
+              How about monitoring the<br/>project development?
+            </h1>
+            <h4>
+              The project is under development, you may monitoring and contribute
+            </h4>
+            <div className="container-social-midias">
+              <div className="midias">
+                <a href=""></a>
+                <a href=""></a>
+              </div>
+              <div className="to-point">
+                <img src="/hands-dark-white.png" alt="google"/>
+                <img src="/black-in-Basic11.png" alt="google"/>
+                <img src="/Blue-in-jumper7.png" alt="google"/>
+                <img src="/Green-in-Jacket3.png" alt="google"/>
+                <img src="/Purple-in-jacket5.png" alt="google"/>
+              </div>
+            </div>
           </div>
         </section>
       </main>

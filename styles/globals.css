@@ -10,10 +10,23 @@ body {
   width: 100%;
   background-color: #FFFFFF;
   font-family: 'Nunito', sans-serif;
+  display: flex;
 }
 
+#__next {
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
 
 main header {
+  width: 1440px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
@@ -22,9 +35,9 @@ main header {
 
 main div.logo {
   display: flex;
-  max-width: 1440px;
   height: 100%;
-  justify-content: center;
+  padding-left: 120px;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -53,7 +66,8 @@ main header nav.navigation a {
 main header nav.login-theme {
   height: 100%;
   display: flex;
-  justify-content: center;
+  padding-right: 120px;
+  justify-content: flex-end;
   flex-direction: row;
   align-items: center;
 }
@@ -139,8 +153,14 @@ main header nav.login-theme a.github img  {
 }
 
 section.intro-app {
-  height: calc(100vh - 56px);
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+section.intro-app .responsive {
+  height: auto;
+  width: 1440px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -197,4 +217,143 @@ section.intro-app .container-tecs img:nth-child(4) {
 
 section.intro-app .container-tecs img {
   height: 40px;
+}
+
+/* ====-=====experience========== */
+
+main section.experience {  
+  background: #F7F7FF 80%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+main section.experience .experience-responsive {
+  width: 1440px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 120px 30px 120px;
+}
+
+main section.experience h1 {
+  text-align: center;
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 57px;
+  margin-bottom: 60px;
+}
+
+main section.experience .view-dashbord {
+  width: 100%;
+  /* margin-bottom: 15vh; */
+  display: flex;
+  justify-content: space-between;
+}
+
+main section.experience .view-dashbord img.dashboard {
+  width: 718px;
+}
+
+main section.experience .view-dashbord .the-best-tools {
+  width: 345px;
+}
+
+main section.experience .view-dashbord .the-best-tools h2 {
+  color: #5A37D5;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 43px;
+}
+
+main section.experience .view-dashbord .the-best-tools p {
+  margin: 30px 0 30px 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: rgba(17, 11, 17, 0.6);
+}
+
+main section.experience .view-dashbord .the-best-tools p a {
+  text-decoration: none;
+  color: rgba(17, 11, 17, 1);
+}
+
+main section.experience .view-dashbord .the-best-tools .container-tools {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: -7px;
+}
+
+main section.container-working {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+main section.container-working p.work-experience {
+  position: absolute;
+  top: -88px;
+  width: 710px;
+  height: 153px;
+  padding: 20px;
+  border-radius: 20px;
+  line-height: 36px;
+  letter-spacing: 0.03em;
+  background-color: #FFFFFF;
+  border: 0.5px solid rgba(17, 11, 17, 0.1);
+  color: rgba(17, 11, 17, 0.6);
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: 600;
+}
+
+main section.monitoring {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(126.8deg, #7957EC 13%, #1E1BA9 106.81%);
+}
+
+main section.monitoring .mento-responsive {
+  width: 1440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main section.monitoring .mento-responsive h1 {
+  text-align: center;
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 60px;
+  letter-spacing: 0.03em;
+  color: #F9F9FF;
+  margin-top: 150px;
+}
+main section.monitoring .mento-responsive h4 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: 0.03em;
+  color: #F9F9FF;
+  margin-top: 40px;
+}
+
+main section.monitoring .mento-responsive .container-social-midias .midias {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main section.monitoring .mento-responsive .container-social-midias .midias a {
+  width: 223px;
+  height: 56px;
+  background-color: #FFFFFF;
+}
+main section.monitoring .mento-responsive .container-social-midias img {
+  height: 500px;
 }
