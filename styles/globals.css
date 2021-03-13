@@ -22,7 +22,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
 }
 
 main header {
@@ -247,7 +246,6 @@ main section.experience h1 {
 
 main section.experience .view-dashbord {
   width: 100%;
-  /* margin-bottom: 15vh; */
   display: flex;
   justify-content: space-between;
 }
@@ -314,6 +312,7 @@ main section.monitoring {
   display: flex;
   justify-content: center;
   background: linear-gradient(126.8deg, #7957EC 13%, #1E1BA9 106.81%);
+  max-height: 950px;
 }
 
 main section.monitoring .mento-responsive {
@@ -344,16 +343,396 @@ main section.monitoring .mento-responsive h4 {
 
 main section.monitoring .mento-responsive .container-social-midias .midias {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
 }
 
 main section.monitoring .mento-responsive .container-social-midias .midias a {
   width: 223px;
   height: 56px;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
+  border: 0.5px solid rgba(17, 11, 17, 0.1);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 6px rgba(17, 11, 17, 0.1);
+  border-radius: 15px;
+  font-size: 18px;
+  line-height: 36px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4fcff8;
+  text-decoration: none;
+
 }
+
+main section.monitoring .mento-responsive .container-social-midias .midias a img {
+  width: 22px;
+  height: 22px;
+  margin-right: 11px;
+}
+
+main section.monitoring .mento-responsive .container-social-midias .midias a + a {
+  margin-left: 20px;
+  color: rgba(17, 11, 17, 0.8);
+}
+
 main section.monitoring .mento-responsive .container-social-midias img {
   height: 500px;
+}
+
+main section.monitoring .mento-responsive .container-social-midias .to-point {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+main section.monitoring .mento-responsive .container-social-midias .to-point img {
+  height: 500px;
+  object-fit: cover;
+}
+
+main section.monitoring .mento-responsive .container-social-midias .to-point img + img {
+  margin-left: 90px;
+}
+
+main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(1) {
+  margin-top: 5px;
+}
+
+main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(2) {
+  margin-top: 75px;
+}
+
+main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(3) {
+  height: 400px;
+  margin-top: 175px;
+}
+
+main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(4) {
+  margin-top: 75px;
+}
+
+main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(5) {
+  margin-top: 5px;
+}
+
+main footer {
+  z-index: 1;
+  height: 262px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFFF;
+}
+
+main footer .responsive-footer {
+  width: 1440px;
+  padding: 39px 20px 20px 132px;
+  display: flex;
+}
+
+
+main footer .responsive-footer img {
+  width: 155px;
+}
+
+main footer .responsive-footer div.development {
+  margin-left: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+main footer .responsive-footer div.contribute {
+  margin-left: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+main footer .responsive-footer div p {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgba(17, 11, 17, 0.8);
+  margin-bottom: 20px;
+}
+
+main footer .responsive-footer div a {
+  font-size: 18px;
+  font-weight: 400;
+  color: #110b119a;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1024px) {
+  main header {
+    width: 1024px;
+  }
+
+  main section div.responsive,
+  main section.experience div.experience-responsive,
+  main section div.container-working,
+  main section.monitoring div.mento-responsive,
+  main section div.responsive-footer {
+    width: 1024px;
+  }
+
+  main div.logo {
+    padding-left: 100px;
+  }
+
+  main div.logo img {
+    height: 30px;
+  }
+
+  main header nav.navigation {
+    padding: 0 20% 0 20%;
+  }
+
+  main header nav.navigation a {
+    font-size: 13px;
+  }
+
+  main header nav.login-theme {
+    padding-right: 100px;
+  }
+
+  main header nav.login-theme .switch__container .switch {
+    position: absolute;
+    visibility: hidden;
+    display: none;
+  }
+
+  main header nav.login-theme .switch__container .switch + label img {
+    top: 1px;
+    width: 16px;
+    left: 2.7px;
+  }
+
+  main header nav.login-theme .switch__container .switch--shadow + label {
+    width:  40px;
+    height: 19px;
+  }
+
+  main header nav.login-theme .switch__container .switch--shadow + label:after {
+    width: 17px;
+    height: 17px;
+    top: 1px;
+  }
+
+  main header nav.login-theme .switch__container  .switch--shadow:checked + label:after {
+    transform: translateX(17px);
+  }
+
+  main header nav.login-theme a.github {
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+  }
+
+  main header nav.login-theme a.github img  {
+    width: 14px;
+  }
+
+  section.intro-app h1 {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+  
+  section.intro-app p {
+    margin: 15px 0 40px 0;
+    font-size: 15px;
+  }
+  
+  section.intro-app p a {
+    margin-left: 8px;
+    display: flex;
+    width: 100px;
+    font-size: 15px;
+  }
+  
+  section.intro-app p a img {
+    height: 15px;
+    width: 15px;
+    margin-right: 3px;
+  }
+  
+  section.intro-app img.dashboard {
+    height: 330px;
+  }
+  
+  section.intro-app .container-tecs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 290px;
+    height: 100%;
+  }
+  
+  section.intro-app .container-tecs img:nth-child(4) {
+    height: 60px;
+  }
+  
+  section.intro-app .container-tecs img {
+    height: 30px;
+  }
+  
+  main section.monitoring {
+    max-height: 100vh;
+  }
+
+  main section.monitoring .mento-responsive {
+    width: 1024px;
+  }
+
+  main section.monitoring .mento-responsive h1 {
+    font-size: 30px;
+    line-height: 39px;
+    margin-top: 100px;
+  }
+
+  main section.monitoring .mento-responsive h4 {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    margin-top: 20px;
+  }
+
+  main section.monitoring .mento-responsive .container-social-midias .midias {
+    margin-top: 40px;
+  }
+
+  main section.monitoring .mento-responsive .container-social-midias .midias a {
+    width: 155px;
+    height: 35px;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+
+  main section.monitoring .mento-responsive .container-social-midias .midias a img {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+  }
+
+  main section.monitoring .mento-responsive .container-social-midias img {
+    height: 100px;
+  }
+
+  main section.monitoring .mento-responsive .container-social-midias .to-point {
+    height: 350px;
+    margin-top: 0px;
+  }
+
+  main section.monitoring .mento-responsive .container-social-midias .to-point img {
+    height: 350px;
+    object-fit: cover;
+  }
+
+  main section.monitoring .mento-responsive .container-social-midias .to-point img + img {
+    margin-left: 10px;
+  }
+
+  main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(1) {
+    margin-top: 0;
+  }
+
+  main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(2) {
+    margin-top: 55px;
+  }
+
+  main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(3) {
+    height: 250px;
+    margin-top: 100px;
+  }
+
+  main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(4) {
+    margin-top: 55px;
+  }
+
+  main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(5) {
+    margin-top: 0;
+  }
+
+  main section.experience div.experience-responsive {
+    padding: 20px;
+    height: 100vh;
+  }
+
+  main section.experience div.experience-responsive h1 {
+    font-size: 30px;
+    line-height: 45px;
+  }
+
+  main section.experience .view-dashbord img.dashboard {
+    width: 500px;
+  }
+
+  main section.experience .view-dashbord .the-best-tools h2 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  main section.experience .view-dashbord .the-best-tools p {
+    margin: 15px 0 15px 0;
+    font-size: 13px;
+    line-height: 15px;
+  }
+
+  main section.experience .view-dashbord .the-best-tools p a {
+    text-decoration: none;
+  }
+
+  main section.experience .view-dashbord .the-best-tools .container-tools img {
+    width: 90px;
+  }
+
+  main section.container-working p.work-experience {
+    top: -55px;
+    width: 550px;
+    height: 100px;
+    padding: 15px;
+    line-height: 25px;
+    font-size: 13px;
+  }
+  
+  main footer {
+    height: 200px;
+  }
+
+  main footer .responsive-footer {
+    width: 1024px;
+    padding: 29px 15px 15px 60px;
+  }
+
+  main footer .responsive-footer img {
+    width: 96px;
+  }
+
+  main footer .responsive-footer div.development {
+    margin-left: 60px;
+  }
+
+
+  main footer .responsive-footer div.contribute {
+    margin-left: 60px;
+  }
+
+  main footer .responsive-footer div p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  main footer .responsive-footer div a {
+    font-size: 14px;
+    margin-bottom: 7px;
+  }
 }

@@ -93,19 +93,44 @@ export default function Home() {
             </h4>
             <div className="container-social-midias">
               <div className="midias">
-                <a href=""></a>
-                <a href=""></a>
+                <a href="">
+                  <img src="/Vector-2.svg" alt="Twitter" />
+                  Twitter
+                </a>
+                <a href="">
+                  <img src="/Vector.svg" alt="Github" />
+                  Github
+                </a>
               </div>
               <div className="to-point">
                 <img src="/hands-dark-white.png" alt="google"/>
-                <img src="/black-in-Basic11.png" alt="google"/>
-                <img src="/Blue-in-jumper7.png" alt="google"/>
                 <img src="/Green-in-Jacket3.png" alt="google"/>
+                <img src="/black-in-Basic11.png" alt="google"/>
                 <img src="/Purple-in-jacket5.png" alt="google"/>
+                <img src="/Blue-in-jumper7.png" alt="google"/>
               </div>
             </div>
           </div>
         </section>
+        <footer>
+          <div className="responsive-footer">
+            <div className="container-logo-footer">
+              <img src="/logo.svg" alt="Koww"/>
+            </div>
+            <div className="development">
+              <p>Development</p>
+              <a href="">About</a>
+              <a href="">Team</a>
+              <a href="">Contact</a>
+            </div>
+            <div className="contribute">
+              <p>Contribute</p>
+              <a href="">Github</a>
+              <a href="">Comunity</a>
+              <a href="">Donations</a>
+            </div>
+          </div>
+        </footer>
       </main>
     </>
   )
