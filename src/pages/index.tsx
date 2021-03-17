@@ -1,6 +1,15 @@
 import Head from "next/head";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function Home() {
+  const hamburger = useRef<HTMLInputElement>(null);
+  const [ isOpen, setIsOpen ] = useState(false);
+
+  function sanduIsOpen(event: React.MouseEvent) {
+    event.preventDefault();
+    console.log(hamburger.current.checked);
+  }
+
   return (
     <>
       <Head>
@@ -10,15 +19,23 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap" rel="stylesheet" />
       </Head>
       <main>
-        <header>
+      <div className="container" onClick={sanduIsOpen} >
+        <input type="checkbox" id="checkbox-menu" ref={hamburger} />
+        <label htmlFor="checkbox-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+        <header className="disable"  >
           <div className="logo">
             <img src='/logo.svg' alt="logo" />
           </div>
-          <nav className="navigation">
+          <nav className="navigation" style={{ display: "none" }} >
             <a href="#">About</a>
             <a href="#">Donations</a>
           </nav>
-          <nav className="login-theme">
+          <nav className="login-theme" style={{ display: "none" }} >
             <div className="switch__container">
               <input id="switch-shadow" className="switch switch--shadow" type="checkbox" />
               <label htmlFor="switch-shadow">
@@ -62,7 +79,7 @@ export default function Home() {
               <img className="dashboard" src="/Workspace.png" alt="Dashboard"/>
               <div className="the-best-tools">
                 <h2>
-                  The best tools<br/>to work in<br/>teams and<br/>remotely
+                  The best tools to work in teams and remotely
                 </h2>
                 <p>
                   Contribute to the project on <a href="/">Github</a>
