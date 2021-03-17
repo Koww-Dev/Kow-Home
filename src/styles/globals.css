@@ -24,6 +24,10 @@ main {
   align-items: center;
 }
 
+.container{
+  display: none;
+}
+
 main header {
   width: 1440px;
   display: grid;
@@ -745,7 +749,6 @@ main footer .responsive-footer div a {
     grid-template-columns: 1fr 0 0;
     grid-template-rows: 1fr 1fr 1fr;
     align-items: center;
-    min-height: 56px;
     position: fixed;
     background-color: #FFFFFF;
   }
@@ -756,7 +759,7 @@ main footer .responsive-footer div a {
     grid-template-columns: 1fr 0 0;
     grid-template-rows: 1fr 0 0;
     align-items: center;
-    min-height: 56px;
+    min-height: 88px;
     position: fixed;
     background-color: #FFFFFF;
   }
@@ -980,6 +983,10 @@ main footer .responsive-footer div a {
 
   main section.monitoring div.mento-responsive {
     padding-top: 100px;
+  }
+
+  section.intro-app {
+    padding-top: 88px;
   }
 
   section.intro-app h1 {

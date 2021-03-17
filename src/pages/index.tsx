@@ -6,8 +6,14 @@ export default function Home() {
   const [ isOpen, setIsOpen ] = useState(false);
 
   function sanduIsOpen(event: React.MouseEvent) {
-    event.preventDefault();
-    console.log(hamburger.current.checked);
+    const { checked } = hamburger.current;
+    if (checked === false) {
+      setIsOpen(true);
+      console.log('abri menu');
+    } else if (checked === true) {
+      console.log('fechei menu');
+      setIsOpen(false);
+    }
   }
 
   return (
@@ -19,23 +25,23 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap" rel="stylesheet" />
       </Head>
       <main>
-      <div className="container" onClick={sanduIsOpen} >
+      <div className="container" >
         <input type="checkbox" id="checkbox-menu" ref={hamburger} />
-        <label htmlFor="checkbox-menu">
+        <label htmlFor="checkbox-menu" onClick={sanduIsOpen} >
           <span></span>
           <span></span>
           <span></span>
         </label>
       </div>
-        <header className="disable"  >
+        <header className={ isOpen === false ? "disable" : "" }>
           <div className="logo">
             <img src='/logo.svg' alt="logo" />
           </div>
-          <nav className="navigation" style={{ display: "none" }} >
+          <nav className={ isOpen === false ? "navigation dsi-none" : "navigation"} >
             <a href="#">About</a>
             <a href="#">Donations</a>
           </nav>
-          <nav className="login-theme" style={{ display: "none" }} >
+          <nav className={ isOpen === false ? "login-theme dsi-none" : "login-theme"} >
             <div className="switch__container">
               <input id="switch-shadow" className="switch switch--shadow" type="checkbox" />
               <label htmlFor="switch-shadow">
