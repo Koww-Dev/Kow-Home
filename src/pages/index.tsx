@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 export default function Home() {
   const hamburger = useRef<HTMLInputElement>(null);
@@ -25,23 +25,43 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap" rel="stylesheet" />
       </Head>
       <main>
-      <div className="container" >
-        <input type="checkbox" id="checkbox-menu" ref={hamburger} />
-        <label htmlFor="checkbox-menu" onClick={sanduIsOpen} >
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-      </div>
-        <header className={ isOpen === false ? "disable" : "" }>
+        <div className="container-header-desktop">
+          <header className="desktop">
+            <div className="logo">
+              <img src='/logo.svg' alt="logo" />
+            </div>
+            <nav className={ isOpen === false ? "navigation dsi-none" : "navigation"} >
+              <a href="#">About</a>
+              <a href="#">Donations</a>
+            </nav>
+            <nav className={ isOpen === false ? "login-theme dsi-none" : "login-theme"} >
+              <div className="switch__container">
+                <input id="switch-shadow-mobile" className="switch switch--shadow-mobile" type="checkbox" />
+                <label htmlFor="switch-shadow-mobile">
+                  <img src="/sun.png" alt="light" />
+                </label>
+              </div>
+              <a href="#github" className="github">
+                <img src="/GitHub.png" alt="github"/>
+              </a>
+            </nav>
+          </header>
+        </div>
+        <header className="mobile">
+          <div className="container">
+            <input type="checkbox" id="checkbox-menu" ref={hamburger} />
+            <label htmlFor="checkbox-menu" onClick={sanduIsOpen} >
+              <span></span>
+              <span></span>
+              <span></span>
+            </label>
+          </div>
           <div className="logo">
             <img src='/logo.svg' alt="logo" />
           </div>
-          <nav className={ isOpen === false ? "navigation dsi-none" : "navigation"} >
+          <nav id="nav-mobile" className={isOpen === false ? "disable" : ""}>
             <a href="#">About</a>
             <a href="#">Donations</a>
-          </nav>
-          <nav className={ isOpen === false ? "login-theme dsi-none" : "login-theme"} >
             <div className="switch__container">
               <input id="switch-shadow" className="switch switch--shadow" type="checkbox" />
               <label htmlFor="switch-shadow">
