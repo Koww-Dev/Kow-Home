@@ -1,20 +1,97 @@
 import Head from "next/head";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const hamburger = useRef<HTMLInputElement>(null);
+  const themeInputDesktop = useRef<HTMLInputElement>(null);
+  const themeInputMobile = useRef<HTMLInputElement>(null);
   const [ isOpen, setIsOpen ] = useState(false);
+  const [ themeBoolean, setThemeBoolean ] = useState(false);
+  const [ colorTheme, setColorTheme ] = useState({
+    color: '',
+    colorSegundary: '',
+    colorDefineTheme: '',
+    background: '' 
+  });
+
+  useEffect(() => {
+    // if (localStorage.getItem('thmeKowworking') === "light" ) {
+    //   setColorTheme('#38363F');
+    //   setThemeBoolean(false);
+    //   themeInputDesktop.current.checked = themeBoolean;
+    //   themeInputDesktop.current.checked = themeBoolean;
+    // } else {
+    //   setColorTheme('#38363F');
+    //   setThemeBoolean(true);
+    //   themeInputDesktop.current.checked = themeBoolean;
+    //   themeInputDesktop.current.checked = themeBoolean;
+    // }
+
+    // setThemeBoolean(themeInputDesktop.current.checked);
+    // themeInputDesktop.current.checked = true;
+
+  }, []);
 
   function sanduIsOpen(event: React.MouseEvent) {
     const { checked } = hamburger.current;
     if (checked === false) {
       setIsOpen(true);
-      console.log('abri menu');
     } else if (checked === true) {
-      console.log('fechei menu');
       setIsOpen(false);
     }
   }
+
+  useEffect(() => {
+    if (themeInputMobile.current.checked === false) {
+      console.log('dark')
+    } else {
+      console.log('claro')
+    }
+  }, []);
+
+  function defineThemedDesktop(event: React.MouseEvent) {
+    console.log(themeInputDesktop.current.checked);
+    if (themeInputDesktop.current.checked === false) {
+      themeInputMobile.current.checked = true;
+      setColorTheme({
+        color: '#110B11',
+        colorSegundary: '',
+        colorDefineTheme: '',
+        background: '#FFFFFF'
+      });
+    } else {
+      themeInputMobile.current.checked = false;
+      setColorTheme({
+        color: '#FFFFFF',
+        colorSegundary: 'rgba(255, 255, 255, 0.6)',
+        background: '#191520',
+        colorDefineTheme: '#110B11',
+      });
+    }
+  }
+
+  function defineThemedDMobile(event: React.MouseEvent) {
+    if (themeInputMobile.current.checked === false) {
+      themeInputDesktop.current.checked = true;
+      setColorTheme({
+        color: '#110B11',
+        colorSegundary: '',
+        background: '',
+        colorDefineTheme: ''
+      });
+      console.log('claro')
+    } else {
+      themeInputDesktop.current.checked = false;
+      setColorTheme({
+        color: '#FFFFFF',
+        colorSegundary: 'rgba(255, 255, 255, 0.6)',
+        background: '#191520',
+        colorDefineTheme: '#110B11'
+      });
+      console.log('dark')
+    }
+  }
+   
 
   return (
     <>
@@ -24,21 +101,30 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap" rel="stylesheet" />
       </Head>
-      <main>
+      <main style={{ backgroundColor: colorTheme.background, color: colorTheme.color }}>
         <div className="container-header-desktop">
-          <header className="desktop">
+          <header className="desktop" >
             <div className="logo">
               <img src='/logo.svg' alt="logo" />
             </div>
-            <nav className={ isOpen === false ? "navigation dsi-none" : "navigation"} >
-              <a href="#">About</a>
-              <a href="#">Donations</a>
+            <nav
+              className={ isOpen === false ? "navigation dsi-none" : "navigation"}
+            >
+              <a href="#" style={{ color: colorTheme.color }} >About</a>
+              <a href="#" style={{ color: colorTheme.color }} >Donations</a>
             </nav>
             <nav className={ isOpen === false ? "login-theme dsi-none" : "login-theme"} >
               <div className="switch__container">
-                <input id="switch-shadow-mobile" className="switch switch--shadow-mobile" type="checkbox" />
-                <label htmlFor="switch-shadow-mobile">
-                  <img src="/sun.png" alt="light" />
+                <input
+                  id="switch-shadow-mobile"
+                  className="switch switch--shadow-mobile"
+                  type="checkbox"
+                  ref={themeInputDesktop}
+                  defaultChecked={true}
+                />
+                <label htmlFor="switch-shadow-mobile" onClick={defineThemedDesktop}>
+                  <img src="/sun.png" className="sun" alt="light" />
+                  <img src="/moon.svg" className="moon" alt="dark" />
                 </label>
               </div>
               <a href="#github" className="github">
@@ -47,7 +133,7 @@ export default function Home() {
             </nav>
           </header>
         </div>
-        <header className="mobile">
+        <header className="mobile" style={{ backgroundColor: colorTheme.background }}>
           <div className="container">
             <input type="checkbox" id="checkbox-menu" ref={hamburger} />
             <label htmlFor="checkbox-menu" onClick={sanduIsOpen} >
@@ -60,12 +146,19 @@ export default function Home() {
             <img src='/logo.svg' alt="logo" />
           </div>
           <nav id="nav-mobile" className={isOpen === false ? "disable" : ""}>
-            <a href="#">About</a>
-            <a href="#">Donations</a>
+            <a href="#" style={{ color: colorTheme.color }} >About</a>
+            <a href="#" style={{ color: colorTheme.color }} >Donations</a>
             <div className="switch__container">
-              <input id="switch-shadow" className="switch switch--shadow" type="checkbox" />
-              <label htmlFor="switch-shadow">
-                <img src="/sun.png" alt="light" />
+              <input
+                id="switch-shadow"
+                className="switch switch--shadow"
+                type="checkbox"
+                ref={themeInputMobile}
+                defaultChecked={true}
+              />
+              <label htmlFor="switch-shadow" onClick={defineThemedDMobile}>
+                <img src="/sun.png" className="sun" alt="light" />
+                <img src="/moon.svg" className="moon" alt="dark" />
               </label>
             </div>
             <a href="#github" className="github">
@@ -80,7 +173,7 @@ export default function Home() {
                 <br/>
               study and evolve as a team
             </h1>
-            <p>
+            <p style={{ color: colorTheme.color }} >
               Under development, see the
               <a href="">
                 <img src="/GitHub-2.png" alt="github"/>
@@ -96,7 +189,7 @@ export default function Home() {
             </div>
         </div>
         </section>
-        <section className="experience">
+        <section className="experience" style={{ backgroundColor: colorTheme.background }}>
           <div className="experience-responsive">
             <h1>
               Simulate the experience of working<br/>on large projects
@@ -107,8 +200,8 @@ export default function Home() {
                 <h2>
                   The best tools to work in teams and remotely
                 </h2>
-                <p>
-                  Contribute to the project on <a href="/">Github</a>
+                <p style={{ color: colorTheme.colorSegundary }}>
+                  Contribute to the project on <a href="/" style={{ color: colorTheme.color }}>Github</a>
                 </p>
                 <div className="container-tools">
                   <img src="/Todo-list.svg" alt="To-Do list" />

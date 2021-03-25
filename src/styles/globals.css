@@ -24,6 +24,13 @@ main {
   align-items: center;
 }
 
+* main,
+* img {
+  transition: all .7s;
+}
+
+
+
 header.desktop {
   display: none;
 }
@@ -114,7 +121,6 @@ label span:nth-child(3) {
 }
 
 header.mobile nav#nav-mobile.disable {
-  transition: all 1s;
   display: none;
 }
 
@@ -157,12 +163,20 @@ header.mobile nav#nav-mobile > .switch__container .switch + label {
   user-select: none;
 }
 
-header.mobile nav#nav-mobile > .switch__container .switch + label img {
+header.mobile nav#nav-mobile > .switch__container .switch + label img.sun {
   display: block;
   position: absolute;
   width: 16px;
   top: 1px;
   left: 2.5px;
+}
+
+header.mobile nav#nav-mobile > .switch__container .switch + label img.moon {
+  display: block;
+  position: absolute;
+  top: 1px;
+  width: 16px;
+  left: 22px;
 }
 
 header.mobile nav#nav-mobile > .switch__container .switch--shadow + label {
@@ -869,12 +883,20 @@ main footer .responsive-footer div a {
     user-select: none;
   }
 
-  main header.desktop nav.login-theme .switch__container .switch + label img {
+  main header.desktop nav.login-theme .switch__container .switch + label img.sun {
     display: block;
     position: absolute;
     top: 5px;
     width: 17px;
     left: 5px;
+  }
+
+  main header.desktop nav.login-theme .switch__container .switch + label img.moon {
+    display: block;
+    position: absolute;
+    top: 5px;
+    width: 17px;
+    right: 5px;
   }
 
   main header.desktop nav.login-theme .switch__container .switch--shadow-mobile + label {
@@ -939,6 +961,7 @@ main footer .responsive-footer div a {
   
   section.intro-app h1 {
     font-size: 3rem;
+    margin: 0;
   }
 
   section.intro-app p {
