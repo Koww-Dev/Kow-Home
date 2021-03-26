@@ -15,9 +15,9 @@ export default function Home() {
     logoLight: '/logo.svg',
     dashboard2: '/dashboard-white-2.png',
     tools: [
-      '/Chat-button-light.png',
-      '/Todo-list-button-ligt.png',
-      '/Video-button-light.png'
+      '/Todo-list.svg',
+      '/Chatbutton.svg',
+      '/Video-button.svg'
     ],
     tecs: [
       '/mongodb.png',
@@ -62,9 +62,10 @@ export default function Home() {
           '/Video-button.svg'
         ],
         tecs: [
-          '',
-          '',
-          ''
+          '/mongodb.png',
+          '/Expressjs.png',
+          '/React.png',
+          '/nodejs.png',
         ]
       });
     } else {
@@ -83,9 +84,10 @@ export default function Home() {
           '/Video-button-light.png'
         ],
         tecs: [
-          '',
-          '',
-          ''
+          '/mongodb-color.png',
+          '/express-color.png',
+          '/React-color.png',
+          '/nodejs-color.png',
         ]
       });
     }
@@ -108,9 +110,10 @@ export default function Home() {
           '/Video-button.svg'
         ],
         tecs: [
-          '',
-          '',
-          ''
+          '/mongodb.png',
+          '/Expressjs.png',
+          '/React.png',
+          '/nodejs.png',
         ]
       });
       console.log('claro')
@@ -130,9 +133,10 @@ export default function Home() {
           '/Video-button-light.png'
         ],
         tecs: [
-          '',
-          '',
-          ''
+          '/mongodb-color.png',
+          '/express-color.png',
+          '/React-color.png',
+          '/nodejs-color.png',
         ]
       });
       console.log('dark')
@@ -229,10 +233,10 @@ export default function Home() {
             </p>
             <img className="dashboard" src={ colorTheme.dashbordDark } alt="Dashboard" />
             <div className="container-tecs">
-              <img src="/mongodb.png" alt="mongoDB Atlas" />
-              <img src="/Expressjs.png" alt="express.js"/>
-              <img src="/React.png" alt="react.js"/>
-              <img src="/nodejs.png" alt="nodejs"/>
+              <img src={ colorTheme.tecs[0] } alt="mongoDB Atlas" />
+              <img src={ colorTheme.tecs[1] } alt="express.js"/>
+              <img src={ colorTheme.tecs[2] } alt="react.js"/>
+              <img src={ colorTheme.tecs[3] } alt="nodejs"/>
             </div>
         </div>
         </section>
