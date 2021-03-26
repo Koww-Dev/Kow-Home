@@ -6,31 +6,26 @@ export default function Home() {
   const themeInputDesktop = useRef<HTMLInputElement>(null);
   const themeInputMobile = useRef<HTMLInputElement>(null);
   const [ isOpen, setIsOpen ] = useState(false);
-  const [ themeBoolean, setThemeBoolean ] = useState(false);
   const [ colorTheme, setColorTheme ] = useState({
     color: '',
     colorSegundary: '',
     colorDefineTheme: '',
-    background: '' 
+    background: '',
+    dashbordDark: '/Dashboard.png',
+    logoLight: '/logo.svg',
+    dashboard2: '/dashboard-white-2.png',
+    tools: [
+      '/Chat-button-light.png',
+      '/Todo-list-button-ligt.png',
+      '/Video-button-light.png'
+    ],
+    tecs: [
+      '/mongodb.png',
+      '/Expressjs.png',
+      '/React.png',
+      '/nodejs.png',
+    ]
   });
-
-  useEffect(() => {
-    // if (localStorage.getItem('thmeKowworking') === "light" ) {
-    //   setColorTheme('#38363F');
-    //   setThemeBoolean(false);
-    //   themeInputDesktop.current.checked = themeBoolean;
-    //   themeInputDesktop.current.checked = themeBoolean;
-    // } else {
-    //   setColorTheme('#38363F');
-    //   setThemeBoolean(true);
-    //   themeInputDesktop.current.checked = themeBoolean;
-    //   themeInputDesktop.current.checked = themeBoolean;
-    // }
-
-    // setThemeBoolean(themeInputDesktop.current.checked);
-    // themeInputDesktop.current.checked = true;
-
-  }, []);
 
   function sanduIsOpen(event: React.MouseEvent) {
     const { checked } = hamburger.current;
@@ -57,7 +52,20 @@ export default function Home() {
         color: '#110B11',
         colorSegundary: '',
         colorDefineTheme: '',
-        background: '#FFFFFF'
+        background: '',
+        dashbordDark: '/Dashboard.png',
+        logoLight: '/logo.svg',
+        dashboard2: '/dashboard-white-2.png',
+        tools: [
+          '/Todo-list.svg',
+          '/Chatbutton.svg',
+          '/Video-button.svg'
+        ],
+        tecs: [
+          '',
+          '',
+          ''
+        ]
       });
     } else {
       themeInputMobile.current.checked = false;
@@ -66,6 +74,19 @@ export default function Home() {
         colorSegundary: 'rgba(255, 255, 255, 0.6)',
         background: '#191520',
         colorDefineTheme: '#110B11',
+        dashbordDark: '/Dashboard-dark.png',
+        logoLight: '/logoLight.svg',
+        dashboard2: '/dashboard-dark-2.png',
+        tools: [
+          '/Chat-button-light.png',
+          '/Todo-list-button-ligt.png',
+          '/Video-button-light.png'
+        ],
+        tecs: [
+          '',
+          '',
+          ''
+        ]
       });
     }
   }
@@ -77,7 +98,20 @@ export default function Home() {
         color: '#110B11',
         colorSegundary: '',
         background: '',
-        colorDefineTheme: ''
+        colorDefineTheme: '',
+        dashbordDark: '/Dashboard.png',
+        logoLight: '/logo.svg',
+        dashboard2: '/dashboard-white-2.png',
+        tools: [
+          '/Todo-list.svg',
+          '/Chatbutton.svg',
+          '/Video-button.svg'
+        ],
+        tecs: [
+          '',
+          '',
+          ''
+        ]
       });
       console.log('claro')
     } else {
@@ -86,7 +120,20 @@ export default function Home() {
         color: '#FFFFFF',
         colorSegundary: 'rgba(255, 255, 255, 0.6)',
         background: '#191520',
-        colorDefineTheme: '#110B11'
+        colorDefineTheme: '#110B11',
+        dashbordDark: '/Dashboard-dark.png',
+        logoLight: '/logoLight.svg',
+        dashboard2: '/dashboard-dark-2.png',
+        tools: [
+          '/Chat-button-light.png',
+          '/Todo-list-button-ligt.png',
+          '/Video-button-light.png'
+        ],
+        tecs: [
+          '',
+          '',
+          ''
+        ]
       });
       console.log('dark')
     }
@@ -105,7 +152,7 @@ export default function Home() {
         <div className="container-header-desktop">
           <header className="desktop" >
             <div className="logo">
-              <img src='/logo.svg' alt="logo" />
+              <img src={ colorTheme.logoLight } alt="logo" />
             </div>
             <nav
               className={ isOpen === false ? "navigation dsi-none" : "navigation"}
@@ -143,7 +190,7 @@ export default function Home() {
             </label>
           </div>
           <div className="logo">
-            <img src='/logo.svg' alt="logo" />
+            <img src={ colorTheme.logoLight } alt="logo" />
           </div>
           <nav id="nav-mobile" className={isOpen === false ? "disable" : ""}>
             <a href="#" style={{ color: colorTheme.color }} >About</a>
@@ -180,7 +227,7 @@ export default function Home() {
                 repository
               </a>
             </p>
-            <img className="dashboard" src="/Dashboard.png" alt="Dashboard" />
+            <img className="dashboard" src={ colorTheme.dashbordDark } alt="Dashboard" />
             <div className="container-tecs">
               <img src="/mongodb.png" alt="mongoDB Atlas" />
               <img src="/Expressjs.png" alt="express.js"/>
@@ -195,18 +242,18 @@ export default function Home() {
               Simulate the experience of working<br/>on large projects
             </h1>
             <div className="view-dashbord">
-              <img className="dashboard" src="/Workspace.png" alt="Dashboard"/>
+              <img className="dashboard" src={ colorTheme.dashboard2 } alt="Dashboard"/>
               <div className="the-best-tools">
                 <h2>
                   The best tools to work in teams and remotely
                 </h2>
-                <p style={{ color: colorTheme.colorSegundary }}>
+                <p style={{ color: colorTheme.colorSegundary }} >
                   Contribute to the project on <a href="/" style={{ color: colorTheme.color }}>Github</a>
                 </p>
                 <div className="container-tools">
-                  <img src="/Todo-list.svg" alt="To-Do list" />
-                  <img src="/Chatbutton.svg" alt="Chat" />
-                  <img src="/Video-button.svg" alt="Video Call" />
+                  <img src={colorTheme.tools[0]} alt="To-Do list" />
+                  <img src={colorTheme.tools[1]} alt="Chat" />
+                  <img src={colorTheme.tools[2]} alt="Video Call" />
                 </div>
               </div>
             </div>
@@ -248,22 +295,22 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <footer>
+        <footer style={{ backgroundColor:colorTheme.background }}>
           <div className="responsive-footer">
             <div className="container-logo-footer">
-              <img src="/logo.svg" alt="Koww"/>
+              <img src={ colorTheme.logoLight } alt="Koww"/>
             </div>
             <div className="development">
-              <p>Development</p>
-              <a href="">About</a>
-              <a href="">Team</a>
-              <a href="">Contact</a>
+              <p style={{ color: colorTheme.colorSegundary }} >Development</p>
+              <a style={{ color: colorTheme.colorSegundary }} href="">About</a>
+              <a style={{ color: colorTheme.colorSegundary }} href="">Team</a>
+              <a style={{ color: colorTheme.colorSegundary }} href="">Contact</a>
             </div>
             <div className="contribute">
-              <p>Contribute</p>
-              <a href="">Github</a>
-              <a href="">Comunity</a>
-              <a href="">Donations</a>
+              <p style={{ color: colorTheme.colorSegundary }} >Contribute</p>
+              <a style={{ color: colorTheme.colorSegundary }} href="">Github</a>
+              <a style={{ color: colorTheme.colorSegundary }} href="">Comunity</a>
+              <a style={{ color: colorTheme.colorSegundary }} href="">Donations</a>
             </div>
           </div>
         </footer>
