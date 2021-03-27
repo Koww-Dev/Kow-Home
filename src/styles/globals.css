@@ -25,8 +25,9 @@ main {
 }
 
 * main,
+* p,
 * img {
-  transition: all .7s;
+  transition: background .7s;
 }
 
 
@@ -168,7 +169,7 @@ header.mobile nav#nav-mobile > .switch__container .switch + label img.sun {
   position: absolute;
   width: 16px;
   top: 1px;
-  left: 2.5px;
+  left: 22px;
 }
 
 header.mobile nav#nav-mobile > .switch__container .switch + label img.moon {
@@ -176,7 +177,7 @@ header.mobile nav#nav-mobile > .switch__container .switch + label img.moon {
   position: absolute;
   top: 1px;
   width: 16px;
-  left: 22px;
+  left: 2.5px;
 }
 
 header.mobile nav#nav-mobile > .switch__container .switch--shadow + label {
@@ -199,7 +200,6 @@ header.mobile nav#nav-mobile > .switch__container .switch--shadow + label:after 
 
 header.mobile nav#nav-mobile > .switch__container .switch--shadow + label:before {
   right: 1px;
-  background-color: #f1f1f1;
   border-radius: 60px;
   transition: all 0.4s;
   z-index: -1;
@@ -208,19 +208,24 @@ header.mobile nav#nav-mobile > .switch__container .switch--shadow + label:before
 header.mobile nav#nav-mobile > .switch__container .switch--shadow + label:after {
   width: 17px;
   height: 17px;
-  top: 1px;
+  top: .1px;
   background-color: #fff;
   border-radius: 100%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   transition: all 0.4s;
 }
 
-/* header.mobile nav#nav-mobile .switch__container .switch--shadow:checked + label:before {
-  background-color: #8ce196;
-} */
+header.mobile nav#nav-mobile > .switch__container .switch--shadow:checked + label {
+  border: 0.5px solid rgba(98, 60, 234, 0.7);
+  background-color: rgba(17, 11, 17, 0.6);
+  box-sizing: border-box;
+}
 
 header.mobile nav#nav-mobile > .switch__container  .switch--shadow:checked + label:after {
   transform: translateX(18px);
+  border: 0.5px solid rgba(98, 60, 234, 0.7);
+  background-color: rgba(17, 11, 17, 0.6);
+  box-sizing: border-box;
 }
 
 header.mobile nav#nav-mobile a.github {
@@ -401,14 +406,13 @@ main section.monitoring {
   display: flex;
   justify-content: center;
   background: linear-gradient(126.8deg, #7957EC 13%, #1E1BA9 106.81%);
-  max-height: 570px;
-  height: 570px;
+  height: 100vh;
 }
 
 main section.monitoring .mento-responsive {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 main section.monitoring .mento-responsive h1 {
@@ -467,15 +471,12 @@ main section.monitoring .mento-responsive .container-social-midias .midias a + a
   color: rgba(17, 11, 17, 0.8);
 }
 
-/* main section.monitoring .mento-responsive .container-social-midias img {
-  width: 300px;
-} */
-
 main section.monitoring .mento-responsive .container-social-midias .to-point {
   position: relative;
   display: flex;
   justify-content: center;
   width: 100%;
+  max-height: 245px;
   margin-top: 30px;
 }
 
@@ -561,9 +562,9 @@ main footer .responsive-footer div a {
   }
 
   main section.monitoring {
-    max-height: 540px;
-    min-height: 540px;
-    height: 570px;
+    /* max-height: 540px; */
+    /* min-height: 540px; */
+    height: 100vh;
   }
 
   header.mobile nav#nav-mobile .switch__container .switch + label img {
@@ -584,9 +585,9 @@ main footer .responsive-footer div a {
   }
 
   main section.monitoring {
-    max-height: 540px;
-    min-height: 540px;
-    height: 570px;
+    /* max-height: 540px; */
+    /* min-height: 540px; */
+    height: 100vh;
   }
 
   main section.monitoring .mento-responsive .container-social-midias .to-point img {
@@ -709,8 +710,7 @@ main footer .responsive-footer div a {
 
   /* =======================monitoring========================== */
   main section.monitoring {
-    min-height: 700px;
-    height: auto;
+    height: 100vh;
   }
   
   main section.monitoring .mento-responsive {
@@ -738,6 +738,10 @@ main footer .responsive-footer div a {
   main section.monitoring .mento-responsive .container-social-midias .midias a img {
     width: 15px;
     height: 15px;
+  }
+
+  main section.monitoring .mento-responsive .container-social-midias .to-point {
+    min-height: 400px;
   }
 
   main section.monitoring .mento-responsive .container-social-midias .to-point img {
@@ -888,7 +892,7 @@ main footer .responsive-footer div a {
     position: absolute;
     top: 5px;
     width: 17px;
-    left: 5px;
+    right: 5px;
   }
 
   main header.desktop nav.login-theme .switch__container .switch + label img.moon {
@@ -896,10 +900,10 @@ main footer .responsive-footer div a {
     position: absolute;
     top: 5px;
     width: 17px;
-    right: 5px;
+    left: 5px;
   }
 
-  main header.desktop nav.login-theme .switch__container .switch--shadow-mobile + label {
+  main header.desktop nav.login-theme .switch__container .switch--shadow-desktop + label {
     padding: 2px;
     width:  62px;
     height: 29px;
@@ -907,8 +911,8 @@ main footer .responsive-footer div a {
     border-radius: 60px;
   }
 
-  main header.desktop nav.login-theme .switch__container .switch--shadow-mobile + label:before,
-  main header.desktop nav.login-theme .switch__container .switch--shadow-mobile + label:after {
+  main header.desktop nav.login-theme .switch__container .switch--shadow-desktop + label:before,
+  main header.desktop nav.login-theme .switch__container .switch--shadow-desktop + label:after {
     display: block;
     position: absolute;
     top: 1px;
@@ -917,7 +921,7 @@ main footer .responsive-footer div a {
     content: '';
   }
 
-  main header.desktop nav.login-theme .switch__container .switch--shadow-mobile + label:before {
+  main header.desktop nav.login-theme .switch__container .switch--shadow-desktop + label:before {
     right: 1px;
     background-color: #f1f1f1;
     border-radius: 60px;
@@ -925,7 +929,7 @@ main footer .responsive-footer div a {
     z-index: -1;
   }
 
-  main header.desktop nav.login-theme .switch__container .switch--shadow-mobile + label:after {
+  main header.desktop nav.login-theme .switch__container .switch--shadow-desktop + label:after {
     width: 24px;
     height: 24px;
     top: 2px;
@@ -935,12 +939,17 @@ main footer .responsive-footer div a {
     transition: all 0.4s;
   }
 
-  /* main header.desktop nav.login-theme .switch__container .switch--shadow:checked + label:before {
-    background-color: #8ce196;
-  } */
+  main header.desktop nav.login-theme .switch__container  .switch--shadow-desktop:checked + label {
+    border: 0.5px solid rgba(98, 60, 234, 0.7);
+    background-color: rgba(17, 11, 17, 0.6);
+    box-sizing: border-box;
+  }
 
-  main header.desktop nav.login-theme .switch__container  .switch--shadow-mobile:checked + label:after {
-    transform: translateX(32px);
+  main header.desktop nav.login-theme .switch__container  .switch--shadow-desktop:checked + label:after {
+    transform: translateX(31px);
+    background: rgba(17, 11, 17, 0.9);
+    border: 0.5px solid rgba(98, 60, 234, 0.7);
+    box-sizing: border-box;
   }
 
   main header.desktop nav.login-theme a.github {
@@ -1123,6 +1132,15 @@ main footer .responsive-footer div a {
 }
 
 @media (min-width: 1440px) {
+  main header.desktop nav.login-theme .switch__container .switch--shadow-desktop + label:after {
+    width: 24px;
+    height: 24px;
+    top: 1.7px;
+    background-color: #fff;
+    border-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s;
+  }
   .container-header-desktop {
     width: 1440px;
   }

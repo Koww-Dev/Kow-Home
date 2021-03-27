@@ -1,5 +1,7 @@
-import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
+
+import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
   const hamburger = useRef<HTMLInputElement>(null);
@@ -10,6 +12,9 @@ export default function Home() {
     color: '',
     colorSegundary: '',
     colorDefineTheme: '',
+    colorExperience: '#FFF',
+    colorExperienceP: 'rgba(17, 11, 17, 0.6)',
+    colorFooterP: '',
     background: '',
     dashbordDark: '/Dashboard.png',
     logoLight: '/logo.svg',
@@ -49,32 +54,13 @@ export default function Home() {
     if (themeInputDesktop.current.checked === false) {
       themeInputMobile.current.checked = true;
       setColorTheme({
-        color: '#110B11',
-        colorSegundary: '',
-        colorDefineTheme: '',
-        background: '',
-        dashbordDark: '/Dashboard.png',
-        logoLight: '/logo.svg',
-        dashboard2: '/dashboard-white-2.png',
-        tools: [
-          '/Todo-list.svg',
-          '/Chatbutton.svg',
-          '/Video-button.svg'
-        ],
-        tecs: [
-          '/mongodb.png',
-          '/Expressjs.png',
-          '/React.png',
-          '/nodejs.png',
-        ]
-      });
-    } else {
-      themeInputMobile.current.checked = false;
-      setColorTheme({
         color: '#FFFFFF',
         colorSegundary: 'rgba(255, 255, 255, 0.6)',
+        colorExperience: '#504F57',
         background: '#191520',
         colorDefineTheme: '#110B11',
+        colorExperienceP: '#FFF',
+        colorFooterP: 'rgba(255, 255, 255, 0.8)',
         dashbordDark: '/Dashboard-dark.png',
         logoLight: '/logoLight.svg',
         dashboard2: '/dashboard-dark-2.png',
@@ -90,17 +76,17 @@ export default function Home() {
           '/nodejs-color.png',
         ]
       });
-    }
-  }
-
-  function defineThemedDMobile(event: React.MouseEvent) {
-    if (themeInputMobile.current.checked === false) {
-      themeInputDesktop.current.checked = true;
+    } else {
+      themeInputMobile.current.checked = false;
       setColorTheme({
         color: '#110B11',
         colorSegundary: '',
-        background: '',
         colorDefineTheme: '',
+        background: '',
+        colorExperience: '#FFF',
+        colorExperienceP: 'rgba(17, 11, 17, 0.6)',
+        colorFooterP: '',
+
         dashbordDark: '/Dashboard.png',
         logoLight: '/logo.svg',
         dashboard2: '/dashboard-white-2.png',
@@ -116,13 +102,19 @@ export default function Home() {
           '/nodejs.png',
         ]
       });
-      console.log('claro')
-    } else {
-      themeInputDesktop.current.checked = false;
+    }
+  }
+
+  function defineThemedDMobile(event: React.MouseEvent) {
+    if (themeInputMobile.current.checked === false) {
+      themeInputDesktop.current.checked = true;
       setColorTheme({
         color: '#FFFFFF',
         colorSegundary: 'rgba(255, 255, 255, 0.6)',
+        colorExperience: '#504F57',
+        colorExperienceP: '#FFF',
         background: '#191520',
+        colorFooterP: 'rgba(255, 255, 255, 0.8)',
         colorDefineTheme: '#110B11',
         dashbordDark: '/Dashboard-dark.png',
         logoLight: '/logoLight.svg',
@@ -140,9 +132,34 @@ export default function Home() {
         ]
       });
       console.log('dark')
+    } else {
+      themeInputDesktop.current.checked = false;
+      setColorTheme({
+        color: '#110B11',
+        colorSegundary: '',
+        background: '',
+        colorDefineTheme: '',
+        colorExperience: '',
+        colorExperienceP: 'rgba(17, 11, 17, 0.6)',
+        colorFooterP: '',
+        dashbordDark: '/Dashboard.png',
+        logoLight: '/logo.svg',
+        dashboard2: '/dashboard-white-2.png',
+        tools: [
+          '/Todo-list.svg',
+          '/Chatbutton.svg',
+          '/Video-button.svg'
+        ],
+        tecs: [
+          '/mongodb.png',
+          '/Expressjs.png',
+          '/React.png',
+          '/nodejs.png',
+        ]
+      });
+      console.log('claro')
     }
   }
-   
 
   return (
     <>
@@ -161,17 +178,21 @@ export default function Home() {
             <nav
               className={ isOpen === false ? "navigation dsi-none" : "navigation"}
             >
-              <a href="#" style={{ color: colorTheme.color }} >About</a>
-              <a href="#" style={{ color: colorTheme.color }} >Donations</a>
+              <Link href="/about">
+                <a style={{ color: colorTheme.color }} >About</a>
+              </Link>
+              <Link href="/about">
+                <a style={{ color: colorTheme.color }} >Donations</a>
+              </Link>
             </nav>
-            <nav className={ isOpen === false ? "login-theme dsi-none" : "login-theme"} >
+            <nav className={"login-theme"} >
               <div className="switch__container">
                 <input
                   id="switch-shadow-mobile"
-                  className="switch switch--shadow-mobile"
+                  className="switch switch--shadow-desktop"
                   type="checkbox"
                   ref={themeInputDesktop}
-                  defaultChecked={true}
+                  defaultChecked={false}
                 />
                 <label htmlFor="switch-shadow-mobile" onClick={defineThemedDesktop}>
                   <img src="/sun.png" className="sun" alt="light" />
@@ -205,7 +226,7 @@ export default function Home() {
                 className="switch switch--shadow"
                 type="checkbox"
                 ref={themeInputMobile}
-                defaultChecked={true}
+                defaultChecked={false}
               />
               <label htmlFor="switch-shadow" onClick={defineThemedDMobile}>
                 <img src="/sun.png" className="sun" alt="light" />
@@ -264,7 +285,12 @@ export default function Home() {
           </div>
         </section>
         <section className="container-working">
-          <p className="work-experience">
+          <p className="work-experience"
+            style={{
+              backgroundColor: colorTheme.colorExperience,
+              color: colorTheme.colorExperienceP
+            }}
+          >
             No work experience? Koww is an open source social network platform that connect
             developers with another developers for study together and work in another open
             source projects
@@ -305,13 +331,13 @@ export default function Home() {
               <img src={ colorTheme.logoLight } alt="Koww"/>
             </div>
             <div className="development">
-              <p style={{ color: colorTheme.colorSegundary }} >Development</p>
+              <p style={{ color: colorTheme.colorExperienceP }} >Development</p>
               <a style={{ color: colorTheme.colorSegundary }} href="">About</a>
               <a style={{ color: colorTheme.colorSegundary }} href="">Team</a>
               <a style={{ color: colorTheme.colorSegundary }} href="">Contact</a>
             </div>
             <div className="contribute">
-              <p style={{ color: colorTheme.colorSegundary }} >Contribute</p>
+              <p style={{ color: colorTheme.colorExperienceP }} >Contribute</p>
               <a style={{ color: colorTheme.colorSegundary }} href="">Github</a>
               <a style={{ color: colorTheme.colorSegundary }} href="">Comunity</a>
               <a style={{ color: colorTheme.colorSegundary }} href="">Donations</a>
