@@ -26,11 +26,10 @@ main {
 
 * main,
 * p,
+* footer,
 * img {
   transition: background .7s;
 }
-
-
 
 header.desktop {
   display: none;
@@ -553,6 +552,66 @@ main footer .responsive-footer div a {
   color: #110b119a;
   text-decoration: none;
   margin-bottom: 10px;
+}
+
+
+  /* =============================== Page About =============================== */
+section.padding .mento-responsive h1.title {
+  margin:  0px 0 0 0;
+}
+
+main section.monitoring .mento-responsive h4 {
+  margin-top: 20px;
+}
+
+section.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  background-color: #FFFFFF;
+  padding: 20px 10px 20px 10px;
+  max-width: 1440px;
+}
+
+section.about h1 {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 44px;
+  color: #5E3CD8;
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: left;
+}
+
+section.about h2 {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 33px;
+  color: #5E3CD8;
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: left;
+}
+
+section.about p.about-paragraph {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 25px;
+  letter-spacing: 0.02em;
+  color: #110B11;
+  margin-bottom: 20px;
+}
+
+section.about img.dashboard {
+  width: 90vw;
+  max-width: 956px;
 }
 
 
@@ -1382,7 +1441,6 @@ main footer .responsive-footer div a {
     flex-direction: column;
   }
 
-
   main footer .responsive-footer div.contribute {
     margin-left: 80px;
     display: flex;
@@ -1404,4 +1462,46 @@ main footer .responsive-footer div a {
     margin-bottom: 10px;
   }
 
+  /* =============================== Page About =============================== */
+  section.about {
+    z-index: 1;
+    background-color: #FFFFFF;
+    padding: 92px 242px 20px 242px;
+  }
+
+  section.about h1 {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    color: #5E3CD8;
+    margin-bottom: 30px;
+  }
+
+  section.about h2 {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    color: #5E3CD8;
+    margin-bottom: 30px;
+  }
+
+  section.about img.dashbord {
+    width: 100px;
+  }
+
+
+  section.about p.about-paragraph {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    color: #110B11;
+    margin-bottom: 20px;
+  }
 }

@@ -173,7 +173,11 @@ export default function Home() {
         <div className="container-header-desktop">
           <header className="desktop" >
             <div className="logo">
-              <img src={ colorTheme.logoLight } alt="logo" />
+              <Link href="/">
+                <a>
+                  <img src={ colorTheme.logoLight } alt="logo" />
+                </a>
+              </Link>
             </div>
             <nav
               className={ isOpen === false ? "navigation dsi-none" : "navigation"}
@@ -215,10 +219,16 @@ export default function Home() {
             </label>
           </div>
           <div className="logo">
-            <img src={ colorTheme.logoLight } alt="logo" />
+            <Link href="/">
+              <a>
+                <img src={ colorTheme.logoLight } alt="logo" />
+              </a>
+            </Link>
           </div>
           <nav id="nav-mobile" className={isOpen === false ? "disable" : ""}>
-            <a href="#" style={{ color: colorTheme.color }} >About</a>
+            <Link href="/about">
+              <a style={{ color: colorTheme.color }} >About</a>
+            </Link>
             <a href="#" style={{ color: colorTheme.color }} >Donations</a>
             <div className="switch__container">
               <input
