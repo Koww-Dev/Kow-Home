@@ -406,12 +406,13 @@ main section.monitoring {
   justify-content: center;
   background: linear-gradient(126.8deg, #7957EC 13%, #1E1BA9 106.81%);
   height: 100vh;
+  max-height: 600px;
 }
 
 main section.monitoring .mento-responsive {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  position: relative;
 }
 
 main section.monitoring .mento-responsive h1 {
@@ -420,8 +421,9 @@ main section.monitoring .mento-responsive h1 {
   font-size: 25px;
   letter-spacing: 0.03em;
   color: #F9F9FF;
-  margin-top: 80px;
+  margin-top: 15vh;
 }
+
 main section.monitoring .mento-responsive h4 {
   text-align: center;
   font-weight: 500;
@@ -471,17 +473,19 @@ main section.monitoring .mento-responsive .container-social-midias .midias a + a
 }
 
 main section.monitoring .mento-responsive .container-social-midias .to-point {
-  position: relative;
+  position: absolute;
   display: flex;
   justify-content: center;
   width: 100%;
   max-height: 245px;
-  margin-top: 30px;
+  bottom: -10px;
 }
 
 main section.monitoring .mento-responsive .container-social-midias .to-point img {
   height: 160px;
   object-fit: cover;
+  /* position: absolute; */
+  bottom: -40px;
 }
 
 main section.monitoring .mento-responsive .container-social-midias .to-point img + img {
@@ -493,16 +497,15 @@ main section.monitoring .mento-responsive .container-social-midias .to-point img
 }
 
 main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(2) {
-  margin-top: 100px;
+  margin-top: 120px;
 }
 
 main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(3) {
-  height: 120px;
   margin-top: 140px;
 }
 
 main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(4) {
-  margin-top: 100px;
+  margin-top: 120px;
 }
 
 main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(5) {
@@ -623,7 +626,6 @@ section.about img.dashboard {
   main section.monitoring {
     /* max-height: 540px; */
     /* min-height: 540px; */
-    height: 100vh;
   }
 
   header.mobile nav#nav-mobile .switch__container .switch + label img {
@@ -644,8 +646,6 @@ section.about img.dashboard {
   }
 
   main section.monitoring {
-    /* max-height: 540px; */
-    /* min-height: 540px; */
     height: 100vh;
   }
 
@@ -775,13 +775,12 @@ section.about img.dashboard {
   main section.monitoring .mento-responsive {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 200px 0 0 0;
+    padding: 0 0 0 0;
   }
 
   main section.monitoring .mento-responsive h1 {
     font-size: 30px;
-    margin-top: 0;
+    margin-top: 15vh;
   }
 
   main section.monitoring .mento-responsive h4 {
@@ -800,37 +799,41 @@ section.about img.dashboard {
   }
 
   main section.monitoring .mento-responsive .container-social-midias .to-point {
-    min-height: 400px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-height: 245px;
+    bottom: -1vw;
   }
 
   main section.monitoring .mento-responsive .container-social-midias .to-point img {
-    height: 400px;
-    object-fit: cover;
+    height: 200px;
+    bottom: -40px;
   }
-
+  
   main section.monitoring .mento-responsive .container-social-midias .to-point img + img {
     margin-left: 0px;
   }
-
+  
   main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(1) {
-    margin-top: 0px;
+    margin-top: 45px;
   }
-
+  
   main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(2) {
-    margin-top: 50px;
+    margin-top: 70px;
   }
-
+  
   main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(3) {
-    height: 300px;
-    margin-top: 125px;
+    margin-top: 100px;
   }
-
+  
   main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(4) {
-    margin-top: 50px;
+    margin-top: 70px;
   }
-
+  
   main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(5) {
-    margin-top: 0px;
+    margin-top: 45px;
   }
 
   /* =======================footer========================== */
@@ -873,7 +876,6 @@ section.about img.dashboard {
     font-size: 16px;
   }
 }
-
 
 @media (min-width: 1024px) {
   header.mobile {
@@ -1101,21 +1103,20 @@ section.about img.dashboard {
 
   /* =======================monitoring========================== */
   main section.monitoring {
-    min-height: 70vw;
-    height: auto;
-    padding: 20vw 0 0 0;
+    height: 130vh;
+    max-height: 900px;
+    padding: 0 0 0 0;
   }
   
   main section.monitoring .mento-responsive {
     display: flex;
     padding: 0;
     flex-direction: column;
-    justify-content: center;
   }
 
   main section.monitoring .mento-responsive h1 {
     font-size: 48px;
-    margin-top: 0;
+    margin-top: 10vw;
   }
 
   main section.monitoring .mento-responsive h4 {
@@ -1133,13 +1134,43 @@ section.about img.dashboard {
     height: 15px;
   }
 
+  main section.monitoring .mento-responsive .container-social-midias .to-point {
+    max-height: 40vh;
+  }
+
   main section.monitoring .mento-responsive .container-social-midias .to-point img {
-    height: 40vw;
+    height: 45vh;
     max-height: 576px;
+    margin-top: 0;
   }
 
   main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(3) {
-    height: 30vw;
+    height: 30vh;
+  }
+  
+  main section.monitoring .mento-responsive .container-social-midias .to-point img + img {
+    margin-left: 0px;
+  }
+  
+  main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(1) {
+    margin-top: 0;
+  }
+  
+  main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(2) {
+    margin-top: 40px;
+  }
+  
+  main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(3) {
+    margin-top: 90px;
+    height: 45vh;
+  }
+  
+  main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(4) {
+    margin-top: 40px;
+  }
+  
+  main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(5) {
+    margin-top: 0;
   }
 
   /* =======================footer========================== */
@@ -1364,21 +1395,25 @@ section.about img.dashboard {
     font-weight: 600;
   }
 
-  
   main section.monitoring {
-    width: 100%;
+    height: 130vh;
+    max-height: 850px;
+    padding: 0 0 0 0;
+  }
+  
+  main section.monitoring .mento-responsive {
     display: flex;
-    padding: 288px 0 0 0;
-    justify-content: center;
-    min-height: 1008px;
-    height: 100px;
+    padding: 0;
+    flex-direction: column;
   }
 
-  main section.monitoring .mento-responsive {
-    width: 1440px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  main section.monitoring .mento-responsive h1 {
+    font-size: 48px;
+    margin-top: 144px;
+  }
+
+  main section.monitoring .mento-responsive h4 {
+    font-size: 30px;
   }
 
   main section.monitoring .mento-responsive .container-social-midias .midias {
@@ -1413,6 +1448,60 @@ section.about img.dashboard {
     width: 22px;
     height: 22px;
     margin-right: 11px;
+  }
+
+  main section.monitoring .mento-responsive .container-social-midias .midias a {
+    width: 233px;
+    height: 56px;
+    font-size: 15px;
+  }
+
+  main section.monitoring .mento-responsive .container-social-midias .midias a img {
+    width: 15px;
+    height: 15px;
+  }
+  main section.monitoring .mento-responsive .container-social-midias .to-point {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 330px;
+    bottom: 0px;
+  }
+
+  main section.monitoring .mento-responsive .container-social-midias .to-point img {
+    height: 374px;
+    max-height: 576px;
+    margin-top: 0;
+  }
+
+  main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(3) {
+    height: 30vw;
+  }
+  
+  main section.monitoring .mento-responsive .container-social-midias .to-point img + img {
+    margin-left: 0px;
+  }
+  
+  main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(1) {
+    margin-top: 0;
+  }
+  
+  main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(2) {
+    margin-top: 40px;
+  }
+  
+  main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(3) {
+    margin-top: 90px;
+    height: 374px;
+  }
+  
+  main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(4) {
+    margin-top: 40px;
+  }
+  
+  main section.monitoring .mento-responsive .container-social-midias .to-point img:nth-child(5) {
+    margin-top: 0;
   }
 
   main footer {
@@ -1492,7 +1581,6 @@ section.about img.dashboard {
   section.about img.dashbord {
     width: 100px;
   }
-
 
   section.about p.about-paragraph {
     font-family: Nunito;
