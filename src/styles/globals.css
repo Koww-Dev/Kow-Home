@@ -251,7 +251,7 @@ section.intro-app {
 }
 
 section.intro-app .responsive {
-  height: 100vh;
+  height: 578px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -559,8 +559,12 @@ main footer .responsive-footer div a {
 
 
   /* =============================== Page About =============================== */
+section.padding {
+  height: 578px !important;
+}
+
 section.padding .mento-responsive h1.title {
-  margin:  0px 0 0 0;
+  margin:  100px 0 0 0;
 }
 
 main section.monitoring .mento-responsive h4 {
@@ -609,11 +613,13 @@ section.about p.about-paragraph {
   line-height: 25px;
   letter-spacing: 0.02em;
   color: #110B11;
+  width: 100%;
   margin-bottom: 20px;
 }
 
 section.about img.dashboard {
   width: 90vw;
+  margin-bottom: 30px;
   max-width: 956px;
 }
 
@@ -1028,6 +1034,10 @@ section.about img.dashboard {
   main header.desktop nav.login-theme a.github img  {
     width: 17px;
   }
+
+  section.intro-app .responsive {
+    /* max-height: 100vh; */
+  }
   
   section.intro-app h1 {
     font-size: 3rem;
@@ -1106,6 +1116,10 @@ section.about img.dashboard {
     height: 130vh;
     max-height: 900px;
     padding: 0 0 0 0;
+  }
+
+  section.padding {
+    height: 100vh !important;
   }
   
   main section.monitoring .mento-responsive {
@@ -1219,8 +1233,12 @@ section.about img.dashboard {
     text-decoration: none;
     margin-bottom: 10px;
   }
-}
 
+  section.about {
+    padding: 20px 50px 20px 50px;
+  }
+}
+  
 @media (min-width: 1440px) {
   main header.desktop nav.login-theme .switch__container .switch--shadow-desktop + label:after {
     width: 24px;

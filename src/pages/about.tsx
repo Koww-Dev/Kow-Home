@@ -2,8 +2,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 
-// import { Container } from './styles';
-
 const pages: React.FC = () => {
   const hamburger = useRef<HTMLInputElement>(null);
   const themeInputDesktop = useRef<HTMLInputElement>(null);
@@ -44,10 +42,64 @@ const pages: React.FC = () => {
   }
 
   useEffect(() => {
-    if (themeInputMobile.current.checked === false) {
-      console.log('dark')
+    if (localStorage.getItem('theme') === 'light' || localStorage.getItem('theme') === null) {
+      console.log('light')
+      themeInputMobile.current.checked = false;
+      themeInputDesktop.current.checked = false;
+      setColorTheme({
+        color: '#110B11',
+        colorSegundary: '',
+        colorDefineTheme: '',
+        colorP: '#110B11',
+        background: '',
+        colorExperience: '#FFF',
+        colorExperienceP: 'rgba(17, 11, 17, 0.6)',
+        colorFooterP: '',
+        dashbordDark: '/Dashboard.png',
+        logoLight: '/logo.svg',
+        dashboard2: '/dashboard-white-2.png',
+        tools: [
+          '/Todo-list.svg',
+          '/Chatbutton.svg',
+          '/Video-button.svg'
+        ],
+        tecs: [
+          '/mongodb.png',
+          '/Expressjs.png',
+          '/React.png',
+          '/nodejs.png',
+        ]
+      });
     } else {
-      console.log('claro')
+      themeInputMobile.current.checked = true;
+      themeInputDesktop.current.checked = true;
+      themeInputMobile.current.checked = true;
+      localStorage.setItem('theme', 'dark');
+      setColorTheme({
+        color: '#FFFFFF',
+        colorP: '#EFF3F7',
+        colorSegundary: 'rgba(255, 255, 255, 0.6)',
+        colorExperience: '#504F57',
+        background: '#191520',
+        colorDefineTheme: '#110B11',
+        colorExperienceP: '#FFF',
+        colorFooterP: 'rgba(255, 255, 255, 0.8)',
+        dashbordDark: '/Dashboard-dark.png',
+        logoLight: '/logoLight.svg',
+        dashboard2: '/dashboard-dark-2.png',
+        tools: [
+          '/Chat-button-light.png',
+          '/Todo-list-button-ligt.png',
+          '/Video-button-light.png'
+        ],
+        tecs: [
+          '/mongodb-color.png',
+          '/express-color.png',
+          '/React-color.png',
+          '/nodejs-color.png',
+        ]
+      });
+      console.log('dark')
     }
   }, []);
 
@@ -55,6 +107,8 @@ const pages: React.FC = () => {
     console.log(themeInputDesktop.current.checked);
     if (themeInputDesktop.current.checked === false) {
       themeInputMobile.current.checked = true;
+      localStorage.setItem('theme', 'dark');
+
       setColorTheme({
         color: '#FFFFFF',
         colorP: '#EFF3F7',
@@ -81,6 +135,8 @@ const pages: React.FC = () => {
       });
     } else {
       themeInputMobile.current.checked = false;
+      localStorage.setItem('theme', 'light');
+
       setColorTheme({
         color: '#110B11',
         colorSegundary: '',
@@ -113,6 +169,8 @@ const pages: React.FC = () => {
   function defineThemedDMobile(event: React.MouseEvent) {
     if (themeInputMobile.current.checked === false) {
       themeInputDesktop.current.checked = true;
+      localStorage.setItem('theme', 'dark');
+
       setColorTheme({
         color: '#FFFFFF',
         colorSegundary: 'rgba(255, 255, 255, 0.6)',
@@ -141,6 +199,8 @@ const pages: React.FC = () => {
       console.log('dark')
     } else {
       themeInputDesktop.current.checked = false;
+      localStorage.setItem('theme', 'light');
+
       setColorTheme({
         color: '#110B11',
         colorSegundary: '',
@@ -259,22 +319,8 @@ const pages: React.FC = () => {
         <section className="monitoring padding">
           <div className="mento-responsive">
             <h1 className="title">
-              How about monitoring the<br/>project development?
-            </h1>
-            <h4>
-              The project is under development, you may monitoring and contribute
-            </h4>
+              Meet the Koww, a <br /> open social network <br/> for developers</h1>
             <div className="container-social-midias">
-              <div className="midias">
-                <a href="">
-                  <img src="/Vector-2.svg" alt="Twitter" />
-                  Twitter
-                </a>
-                <a href="">
-                  <img src="/Vector.svg" alt="Github" />
-                  Github
-                </a>
-              </div>
               <div className="to-point">
                 <img src="/hands-dark-white.png" alt="google"/>
                 <img src="/Green-in-Jacket3.png" alt="google"/>
@@ -300,6 +346,18 @@ const pages: React.FC = () => {
           </p>
           <h2>More</h2>
           <img className="dashboard" src={ colorTheme.dashbordDark } alt="Dashboard" />
+          <p className="about-paragraph" style={{ color: colorTheme.colorP }} >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor sit commodo
+            vulputate nunc tellus, in etiam. Vestibulum dui pulvinar urna risus,
+            vulputate felis mattis. Est sed ullamcorper sed amet enim aliquet ornare
+            donec quis. Id aenean magna adipiscing nunc posuere lorem at vel molestie. 
+          </p>
+          <p className="about-paragraph" style={{ color: colorTheme.colorP }} >
+            Ipsum arcu mauris semper nascetur orci id neque in. Eleifend viverra
+            condimentum pellentesque diam sed congue orci etiam nunc. Nulla quis
+            porttitor vulputate volutpat varius vitae.
+          </p>
+          <h2>More</h2>
         </section>
         <footer style={{ backgroundColor:colorTheme.background }}>
           <div className="responsive-footer">

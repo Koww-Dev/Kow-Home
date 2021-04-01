@@ -42,10 +42,63 @@ export default function Home() {
   }
 
   useEffect(() => {
-    if (themeInputMobile.current.checked === false) {
-      console.log('dark')
+    if (localStorage.getItem('theme') === 'light' || localStorage.getItem('theme') === null) {
+      console.log('light')
+      themeInputMobile.current.checked = false;
+      themeInputDesktop.current.checked = false;
+      setColorTheme({
+        color: '#110B11',
+        colorSegundary: '',
+        colorDefineTheme: '',
+        background: '',
+        colorExperience: '#FFF',
+        colorExperienceP: 'rgba(17, 11, 17, 0.6)',
+        colorFooterP: '',
+
+        dashbordDark: '/Dashboard.png',
+        logoLight: '/logo.svg',
+        dashboard2: '/dashboard-white-2.png',
+        tools: [
+          '/Todo-list.svg',
+          '/Chatbutton.svg',
+          '/Video-button.svg'
+        ],
+        tecs: [
+          '/mongodb.png',
+          '/Expressjs.png',
+          '/React.png',
+          '/nodejs.png',
+        ]
+      });
     } else {
-      console.log('claro')
+      themeInputMobile.current.checked = true;
+      themeInputDesktop.current.checked = true;
+      themeInputMobile.current.checked = true;
+      localStorage.setItem('theme', 'dark');
+      setColorTheme({
+        color: '#FFFFFF',
+        colorSegundary: 'rgba(255, 255, 255, 0.6)',
+        colorExperience: '#504F57',
+        background: '#191520',
+        colorDefineTheme: '#110B11',
+        colorExperienceP: '#FFF',
+        colorFooterP: 'rgba(255, 255, 255, 0.8)',
+        dashbordDark: '/Dashboard-dark.png',
+        logoLight: '/logoLight.svg',
+        dashboard2: '/dashboard-dark-2.png',
+        tools: [
+          '/Chat-button-light.png',
+          '/Todo-list-button-ligt.png',
+          '/Video-button-light.png'
+        ],
+        tecs: [
+          '/mongodb-color.png',
+          '/express-color.png',
+          '/React-color.png',
+          '/nodejs-color.png',
+        ]
+      });
+      console.log('dark')
     }
   }, []);
 
@@ -53,6 +106,7 @@ export default function Home() {
     console.log(themeInputDesktop.current.checked);
     if (themeInputDesktop.current.checked === false) {
       themeInputMobile.current.checked = true;
+      localStorage.setItem('theme', 'dark');
       setColorTheme({
         color: '#FFFFFF',
         colorSegundary: 'rgba(255, 255, 255, 0.6)',
@@ -78,6 +132,8 @@ export default function Home() {
       });
     } else {
       themeInputMobile.current.checked = false;
+      localStorage.setItem('theme', 'light');
+
       setColorTheme({
         color: '#110B11',
         colorSegundary: '',
@@ -108,6 +164,7 @@ export default function Home() {
   function defineThemedDMobile(event: React.MouseEvent) {
     if (themeInputMobile.current.checked === false) {
       themeInputDesktop.current.checked = true;
+      localStorage.setItem('theme', 'dark');
       setColorTheme({
         color: '#FFFFFF',
         colorSegundary: 'rgba(255, 255, 255, 0.6)',
@@ -134,6 +191,8 @@ export default function Home() {
       console.log('dark')
     } else {
       themeInputDesktop.current.checked = false;
+      localStorage.setItem('theme', 'light');
+
       setColorTheme({
         color: '#110B11',
         colorSegundary: '',
@@ -185,7 +244,7 @@ export default function Home() {
               <Link href="/about">
                 <a style={{ color: colorTheme.color }} >About</a>
               </Link>
-              <Link href="/about">
+              <Link href="#">
                 <a style={{ color: colorTheme.color }} >Donations</a>
               </Link>
             </nav>
